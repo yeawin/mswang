@@ -20,6 +20,7 @@
       </layoutsDirectory>
       <modelsDirectory>
         <modelFile modelName="Users"/>
+        <modelFile modelName="Websubject"/>
       </modelsDirectory>
       <modulesDirectory>
         <moduleDirectory moduleName="admin">
