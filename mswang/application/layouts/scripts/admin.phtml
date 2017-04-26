@@ -321,9 +321,12 @@ folder instead of downloading all of them to reduce the load. -->
         	<select class="form-control">
         	 <option value="">请选择站点</option>
         	<?php 
-        	foreach ($this->hosts as $host) {
-        		echo "<option value=\"" . $host['host_id'] . "\">" . $host['host_name'] . "</option>";
+        	if (isset($this->hosts)) {
+        	    foreach ($this->hosts as $host) {
+        	        echo "<option value=\"" . $host['host_id'] . "\">" . $host['host_name'] . "</option>";
+        	    } 
         	}
+
         	 ?>
         		
            </select>
@@ -347,6 +350,26 @@ folder instead of downloading all of them to reduce the load. -->
         </li>
         <li class="treeview">
           <a href="#">
+            <i class="fa fa-laptop"></i>
+            <span>栏目管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+          <li><a href="<?php echo $this->baseUrl('/admin/subject/')?>"><i class="fa fa-circle-o"></i>栏目列表</a></li>
+          <?php 
+          if (isset($this->host_subjects)) {
+        	foreach ($this->host_subjects as $subject) {
+             echo "<li><a href=\"javascript:alert('显示栏目下子栏目');\"><i class=\"fa fa-circle-o\"></i>" . $subject["subject_name"] . "</a></li>";
+        	}
+          }
+           ?>
+
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
             <i class="fa fa-files-o"></i>
             <span>内容管理</span>
             <span class="pull-right-container">
@@ -360,18 +383,10 @@ folder instead of downloading all of them to reduce the load. -->
             <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
           </ul>
         </li>
-        <li>
-          <a href="pages/widgets.html">
-            <i class="fa fa-th"></i> <span>Widgets</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-green">new</small>
-            </span>
-          </a>
-        </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-pie-chart"></i>
-            <span>Charts</span>
+            <span>文档管理</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -386,7 +401,24 @@ folder instead of downloading all of them to reduce the load. -->
         <li class="treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>
-            <span>UI Elements</span>
+            <span>权限管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
+            <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
+            <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
+            <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
+            <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
+            <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-laptop"></i>
+            <span>系统管理</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
