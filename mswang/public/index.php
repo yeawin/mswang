@@ -15,6 +15,8 @@ if (function_exists('zend_deployment_library_path') && zend_deployment_library_p
 $paths[] = get_include_path();
 set_include_path(implode(PATH_SEPARATOR, $paths));
 
+// require_once realpath(APPLICATION_PATH . '/../vendor/autoload.php');
+
 /** Zend_Application */
 require_once 'Zend/Application.php';
 

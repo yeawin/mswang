@@ -316,13 +316,17 @@ folder instead of downloading all of them to reduce the load. -->
         </div>
       </div>
       <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
-              <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
+      <form action="#" method="get" class="sidebar-form" id="form_hosts">
+        <div class="form-group">
+        	<select class="form-control">
+        	 <option value="">请选择站点</option>
+        	<?php 
+        	foreach ($this->hosts as $host) {
+        		echo "<option value=\"" . $host['host_id'] . "\">" . $host['host_name'] . "</option>";
+        	}
+        	 ?>
+        		
+           </select>
         </div>
       </form>
       <!-- /.search form -->
@@ -344,7 +348,7 @@ folder instead of downloading all of them to reduce the load. -->
         <li class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i>
-            <span>Layout Options</span>
+            <span>内容管理</span>
             <span class="pull-right-container">
               <span class="label label-primary pull-right">4</span>
             </span>

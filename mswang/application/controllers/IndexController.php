@@ -16,6 +16,13 @@ class IndexController extends Zend_Controller_Action
         var_dump($user);
     }
 
+    public function installAction()
+    {
+        // action body
+    }
+
 
 }
+
+
 

@@ -1,5 +1,12 @@
 {
   "name" : "mswang",
+  "require" : {
+    "almasaeed2010/adminlte" : "v2.3.11",
+    "robmorgan/phinx" : "v0.8.0",
+    "zendframework/zendframework1" : "1.12.20",
+    "fortawesome/font-awesome" : "v4.7.0",
+    "driftyco/ionicons" : "v2.0.1"
+  },
   "repositories" : [ {
     "type" : "composer",
     "url" : "https://packagist.org/"
