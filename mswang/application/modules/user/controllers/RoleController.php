@@ -1,6 +1,6 @@
 <?php
 
-class Admin_IndexController extends Zend_Controller_Action
+class User_RoleController extends Zend_Controller_Action
 {
 
     public function init()
@@ -15,6 +15,13 @@ class Admin_IndexController extends Zend_Controller_Action
         // action body
     }
 
+    public function listAction()
+    {
+        // action body
+    }
+
 
 }
+
+
 

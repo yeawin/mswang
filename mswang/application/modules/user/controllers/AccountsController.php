@@ -1,6 +1,6 @@
 <?php
 
-class Admin_IndexController extends Zend_Controller_Action
+class User_AccountsController extends Zend_Controller_Action
 {
 
     public function init()
@@ -15,6 +15,21 @@ class Admin_IndexController extends Zend_Controller_Action
         // action body
     }
 
+    public function loginAction()
+    {
+        // action body
+        $this->_helper->layout()->disableLayout();
+    }
+
+    public function listAction()
+    {
+        // action body
+    }
+
 
 }
+
+
+
+
 

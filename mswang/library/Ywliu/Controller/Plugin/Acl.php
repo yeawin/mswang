@@ -44,8 +44,8 @@ class Ywliu_Controller_Plugin_Acl extends Zend_Controller_Plugin_Abstract
         if ($acl->has($resource)){                       
             if(!$acl->isAllowed($role, $resource, $action)) {
                 if ('guest' === $role) {
-                    $request->setModuleName('accounts');
-                    $request->setControllerName('index');
+                    $request->setModuleName('user');
+                    $request->setControllerName('accounts');
                     $request->setActionName('login');
                 } else {
                     $request->setModuleName('default');
@@ -53,6 +53,10 @@ class Ywliu_Controller_Plugin_Acl extends Zend_Controller_Plugin_Abstract
                     $request->setActionName('noauth');
                 }
             }        
+        } else {
+            $request->setModuleName('default');
+            $request->setControllerName('error');
+            $request->setActionName('noauth');
         }
     }
 }
